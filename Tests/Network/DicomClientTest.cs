@@ -516,7 +516,7 @@ namespace Dicom.Network
                 client.Send("127.0.0.1", port, false, "SCU", "ANY-SCP");
 
                 client.AddRequest(new DicomCEchoRequest { OnResponseReceived = (req, res) => ++counter });
-                Thread.Sleep(100);
+                Thread.Sleep(1000);
 
                 Assert.Equal(2, counter);
                 Assert.False(client.IsSendRequired);
